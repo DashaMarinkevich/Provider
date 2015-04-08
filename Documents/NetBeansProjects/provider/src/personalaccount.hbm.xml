@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+   <class name="entity.PersonalAccount" table="personalaccount">
+      <meta attribute="class-description">
+         This class contains the personalaccount detail. 
+      </meta>
+      <id name="id" type="int" column="numPersAccount">
+         <generator class="native"/>
+      </id>
+      <property name="statusPersAccount" column="statusPersAccount" type="string"/>
+ <set name="contract" lazy="false">
+      <key column="numPersAccount"/>
+      <one-to-many class="entity.Contract"/>
+</set>
+  </class>
+</hibernate-mapping>

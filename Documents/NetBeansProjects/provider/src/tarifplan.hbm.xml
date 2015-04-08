@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+   <class name="entity.TarifPlan" table="tarifplan">
+      <meta attribute="class-description">
+         This class contains the tarifplan detail. 
+      </meta>
+      <id name="id" type="int" column="idTarif">
+         <generator class="native"/>
+      </id>
+      <property name="nameTarif" column="nameTarif" type="string"/>
+      <property name="trafic" column="trafic" type="int"/>
+      <property name="speed" column="speed" type="double"/>
+	  <property name="price" column="price" type="double"/>
+ <!--<set name="contract" lazy="false">
+      <key column="idTarif"/>
+      <one-to-many class="entity.Contract"/>
+    </set>-->
+
+  </class>
+</hibernate-mapping>

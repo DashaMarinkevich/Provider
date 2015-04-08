@@ -1,0 +1,4 @@
+root
+mama
+jdbc:mysql://localhost:3306/provider
+com.mysql.jdbc.Driver

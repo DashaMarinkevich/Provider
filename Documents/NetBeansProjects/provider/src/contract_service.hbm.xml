@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+   <class name="entity.Contract_Service" table="contract_service">
+      <meta attribute="class-description">
+         This class contains the contract_service detail. 
+      </meta>
+      <id name="numContract" type="int" column="numContract">
+         <generator class="native"/>
+      </id>
+	 <property name="idService" column="idService" type="int"/>
+ 
+  </class>
+</hibernate-mapping>

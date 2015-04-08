@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="entity.Client" table="client">
+      <meta attribute="class-description">
+         This class contains the client detail. 
+      </meta>
+      <id name="id" type="int" column="idClient">
+         <generator class="native"/>
+      </id>
+      <property name="fullName" column="fullName" type="string"/>
+      <property name="seriaPassport" column="seriaPassport" type="string"/>
+      <property name="numPassport" column="numPassport" type="int"/>
+	  <property name="adress" column="adress" type="string"/>
+      <property name="email" column="email" type="string"/>
+	   <property name="login" column="login" type="string"/>
+      <property name="password" column="password" type="int"/>
+<!--<set name="pays" cascade="all" lazy="false">
+      <key column="idClient"/>
+      <one-to-many class="entity.Pays"/>
+	  </set>-->
+	  <set name="contract" cascade="all">
+      <key column="idClient"/>
+      <one-to-many class="entity.Contract"/>
+    </set>
+
+   </class>
+</hibernate-mapping>

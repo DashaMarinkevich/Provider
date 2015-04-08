@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+   <class name="entity.Service" table="service">
+      <meta attribute="class-description">
+         This class contains the service detail. 
+      </meta>
+      <id name="id" type="int" column="idService">
+         <generator class="native"/>
+      </id>
+      <property name="descripService" column="descripService" type="string"/>
+      <property name="priceService" column="priceService" type="double"/>
+      <property name="note" column="note" type="string"/>
+  
+    <set name="contract"  table="contract_service" lazy="false">
+      <key column="idService"/>
+      <many-to-many column="numContract" class="entity.Contract"/>
+    </set>
+
+  </class>
+</hibernate-mapping>

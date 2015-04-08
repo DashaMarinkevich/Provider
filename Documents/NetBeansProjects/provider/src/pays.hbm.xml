@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="entity.Pays" table="pays">
+      <meta attribute="class-description">
+         This class contains the pays detail. 
+      </meta>
+      <id name="id" type="int" column="numPay">
+         <generator class="native"/>
+      </id>
+      <property name="sumPay" column="sumPay" type="double"/>
+      <property name="datePay" column="datePay" type="string"/>
+<!--<many-to-one name="personalAccount" column="numPersAccount" class="entity.PersonalAccont" not-null="true" />	  
+-->
+<many-to-one name="client" column="idClient" class="entity.Client" not-null="true" />
+   </class>
+</hibernate-mapping>
